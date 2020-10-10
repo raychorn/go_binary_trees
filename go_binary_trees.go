@@ -6,13 +6,15 @@ import (
     "os"
     "io"
 )
-  
+
+// BinaryNode ...
 type BinaryNode struct {
     left  *BinaryNode
     right *BinaryNode
     data  int64
 }
   
+// BinaryTree ...
 type BinaryTree struct {
     root *BinaryNode
 }
@@ -58,18 +60,11 @@ func print(w io.Writer, node *BinaryNode, ns int, ch rune) {
 }
   
 func main() {
-    tree := &BinaryTree{}
-    tree.insert(100).
-        insert(-20).
-        insert(-50).
-        insert(-15).
-        insert(-60).
-        insert(50).
-        insert(60).
-        insert(55).
-        insert(85).
-        insert(15).
-        insert(5).
-        insert(-10)
+	tree := &BinaryTree{}
+	start := 1
+	//numNodes := 5
+	for i:= start; i < 10; i++ {
+		tree.insert(int64(i))
+	}
     print(os.Stdout, tree.root, 0, 'M')
 }
